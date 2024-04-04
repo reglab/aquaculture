@@ -89,6 +89,10 @@ This section can be run independently to produce the findings and figures presen
 the need to load the French imagery data and run inference using our model weights. It uses the human-annotated
 cage labels (`output/humanlabels.geojson`), as well as a geojson of the model-predicted cages (`output/detections.geojson`).
 
+Before running the following scripts, unzip the `image_boxes_years.zip` file that is located in the
+`data` directory and store the three .geojson files such that their final path is `data/image_boxes_years.geojson`, 
+`data/image_boxes_years_dedup.geojson` and `data/image_boxes_years_rmblank.geojson`.
+
 * Load the Bathymetry data
 ```
 python3 src/load_data/bathymetry_data.py
