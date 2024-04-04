@@ -1,0 +1,8 @@
+.venv/
+basemap/
+data/shapefiles
+data/bathymetry
+output/Facilities
+data/image_boxes_years.geojson
+data/image_boxes_years_dedup.geojson
+data/image_boxes_years_rmblank.geojson
