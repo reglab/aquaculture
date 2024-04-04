@@ -133,10 +133,10 @@ Rscript src/Results/upper_bound_calculation.R
 ```
 
 ### Dataset release
-To enable other researchers seeking to appy our method, we make available the following object 
+To enable other researchers seeking to apply our method, we make available the following object 
 detection datasets (in YOLO format). As discussed above, we only make the GEP portion of the dataset
 available to academic researchers upon request due to the licensing terms of the imagery. 
-The public version of the dataset can be found on [HuggingFace](https://huggingface.co/reglab).
+The public version of the dataset can be found on [HuggingFace](https://huggingface.co/datasets/reglab/aquaculture_detection).
 
 * French aerial imagery: 286 aerial images (from IGN's [BD Ortho](https://geoservices.ign.fr/bdortho) series) containing 4,142 human-annotated finfish cage bounding boxes
 * GEP imagery: 896 images containing 2,464 human-annotated finfish cage bounding boxes
