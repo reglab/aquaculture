@@ -533,8 +533,14 @@ if __name__ == "__main__":
         results.to_csv(cfg.output_path)
 
     # Test set performance using best HPs
+    
+    # Optimal hyperparameters found using above grid search
+    CONF_THRESH = 0.785
+    DISTANCE_THRESHOLD = 50
+    MIN_CLUSTER_SIZE = 5
+    
     print('Evaluating test set performance')
     test_df = test_set_performance(
         images=ocean_images_test, predictions=ocean_detections, labels=labels,
-        confidence_threshold=0.785, distance_threshold=50, minimum_cluster_size=5)
+        confidence_threshold=CONF_THRESH, distance_threshold=DISTANCE_THRESHOLD, minimum_cluster_size=MIN_CLUSTER_SIZE)
     test_df.to_csv(cfg.output_path.replace('fold_results', 'test_results'))
