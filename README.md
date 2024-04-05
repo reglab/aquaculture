@@ -35,7 +35,7 @@ sensing images from Google Earth Pro, as well as bounding box annotations for 1,
 689 square finfish cages and 7 other cages. Please reach out to `deho@stanford.edu` to make a request. 
 
 The following command can be used to train a YOLOv5 model on our GEP data.
-More information about these commands can be found in the YOLOv5 repo's documentation. 
+More information about these commands can be found in the [YOLOv5 documentation](https://docs.ultralytics.com/yolov5/).
 
 ```
 python3 yolov5/train.py --img 640 --batch 16 --epochs 50 --data model/multilabel_farms.yaml --weights yolov5m.pt --project multilabel_farms
@@ -44,7 +44,7 @@ python3 yolov5/train.py --img 640 --batch 16 --epochs 50 --data model/multilabel
 ### Running inference on the French Mediterranean and processing the detections
 We ran inference on aerial imagery of the French Mediterranean, sourced from the 
 [BD Ortho](https://geoservices.ign.fr/bdortho) series 
-published by Institut national de l'information géographique et forestière.
+published by Institut national de l'information géographique et forestière (IGN).
 The YOLOV5 weights we used to run inference on the French Mediterranean data can be
 found in our repository at this location: `output/model_weights/multilabel_farms_exp2.pt`.
 
@@ -79,8 +79,8 @@ file in the following directory: `data/shapefiles/raw` such that the final file 
 
 ```
 python3 src/load_data/create_land_filter.py
-python3 geocode_results.py --gcs_bucket image-hub --gcs_im_path coastal_french_data/jpegs --detection_txt data/french_inference_labels/labels
-python3 calc_net_areas.py
+python3 src/process_yolo/geocode_results.py --gcs_bucket image-hub --gcs_im_path coastal_french_data/jpegs --detection_txt data/french_inference_labels/labels
+python3 src/process_yolo/calc_net_areas.py
 ```
 
 
@@ -114,14 +114,14 @@ python3 src/load_data/create_land_filter.py
 
 Once you have run the three scripts above, you can reproduce the findings presented in the manuscript
 using the following scripts.
-1. Generate the model performance stats and plots (Fig. 3)
+1. Generate the model performance stats and plots (Fig. 3). Note that the `get_kfold_cluster_performance.py` script, which runs the hyperparameter grid search described in the paper, is configured by the `get_kfold_cluster_performance_cfg.py` file. We enter the best hyperparameters identified during our run as fixed constants in the file that can be updated if you change the search parameters.
 ```
 python3 src/get_kfold_cluster_performance.py
 python3 src/Results/ModelPerformance.py
 ```
 2. Generate the facility map and comparison to Trujillo facilities (Fig. 4)
 ```
-python3src/Results/FacilitiesMaps.py
+python3 src/Results/FacilitiesMaps.py
 ```
 3. Compute the tonnage estimates and tonnage near Trujillo facilities (Fig. 6)
 ```
