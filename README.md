@@ -4,6 +4,17 @@
 This is the code repository for "Locating and measuring marine aquaculture production 
 with remote sensing: a computer vision approach in the French Mediterranean."
 
+
+Building on a manual survey of aquaculture production from remote sensing imagery, we train a 
+computer vision model to identify  marine aquaculture cages from remote sensing imagery, 
+and generate a spatially explicit dataset of finfish production locations in the French 
+Mediterranean from 2000-2021. 
+
+To train our model, we use the mariculture locations in the Mediterranean identified by 
+[Trujillo et al. (2012)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0030546), 
+which can be found in the following file: `data/aquaculture_med_dedupe.csv`.
+
+
 ![Methodology Overview](output/paper_figures/SimpleDiagram.jpg)
 
 Citation: (TBD)
@@ -140,3 +151,16 @@ The public version of the dataset can be found on [HuggingFace](https://huggingf
 
 * French aerial imagery: 286 aerial images (from IGN's [BD Ortho](https://geoservices.ign.fr/bdortho) series) containing 4,142 human-annotated finfish cage bounding boxes
 * GEP imagery: 896 images containing 2,464 human-annotated finfish cage bounding boxes
+
+
+### References
+
+Google, Google Earth Pro, versions 7.3.4.8573-7.3.6.9326, Google Earth (2023);
+https://earth.google.com.
+
+Institut national de l’information géographique et forestière, BD704
+ORTHO, version 2.0, République Française Géoservices (2023);
+https://geoservices.ign.fr/documentation/donnees/ortho/bdortho.
+
+P. Trujillo, C. Piroddi, J. Jacquet, Fish Farms at Sea: The Ground Truth from Google Earth.672
+PLos One 7, e30546 (2012).
